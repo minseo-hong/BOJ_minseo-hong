@@ -14,12 +14,10 @@ int main(void) {
     }
     
     int remArr[NUM_ARR_MAX_SIZE];
-    for (int i = 0; i < NUM_ARR_MAX_SIZE; i++) {
+    for (int i = 0; i < NUM_ARR_MAX_SIZE; i++)
         remArr[i] = NULL_INT;
-    }
     
-    int count = 0;
-    int isExist;
+    int isExist, count = 0;
     for (int i = 0; i < NUM_ARR_MAX_SIZE; i++) {
         isExist = FALSE;
         for (int j = 0; j < NUM_ARR_MAX_SIZE; j++)
