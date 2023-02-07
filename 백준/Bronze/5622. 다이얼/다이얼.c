@@ -16,13 +16,12 @@ int main(void) {
                 break;
             dialTime++;
         }
-        if (dialStr[i] >= 'P' && dialStr[i] <= 'S') {
+        if (dialStr[i] >= 'P' && dialStr[i] <= 'S')
             dialTime = 8;
-        } else if (dialStr[i] >= 'S' && dialStr[i] <= 'V') {
+        else if (dialStr[i] >= 'S' && dialStr[i] <= 'V')
             dialTime = 9;
-        } else if (dialStr[i] >= 'W' && dialStr[i] <= 'Z') {
+        else if (dialStr[i] >= 'W' && dialStr[i] <= 'Z')
             dialTime = 10;
-        }
         totalDialTime += dialTime;
     }
     
