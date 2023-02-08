@@ -17,9 +17,8 @@ int main(void) {
     
     int completed[SEQ_MAX_SIZE], pairCount = 0;
     for (int smNum = 1; smNum < pairSum; smNum++) {
-        if (!selected[smNum])     continue;
-//        if (smNum == pairSum / 2) break;
-        if (completed[smNum])     break;
+        if (!selected[smNum]) continue;
+        if (completed[smNum]) break;
         for (int bgNum = pairSum - 1; bgNum >= 1; bgNum--) {
             if (!selected[bgNum]) continue;
             if (smNum == bgNum)   continue;
