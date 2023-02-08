@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 #define SEQ_MAX_SIZE    1500000
-#define INPUT_NUMS_MAX_COUNT
 
 int main(void) {
     int seqSize;
@@ -17,24 +16,17 @@ int main(void) {
     scanf("%d", &pairSum);
     
     int completed[SEQ_MAX_SIZE], pairCount = 0;
-    for (int i = 1; i < pairSum; i++) {
-        if (!selected[i]) {
-            continue;
-        }
-        if (completed[i]) {
-            break;
-        }
-        for (int j = pairSum - 1; j >= 1; j--) {
-            if (!selected[j]) {
-                continue;
-            }
-            if (i == j) {
-                continue;
-            }
-            if (i + j == pairSum) {
+    for (int smNum = 1; smNum < pairSum; smNum++) {
+        if (!selected[smNum])     continue;
+//        if (smNum == pairSum / 2) break;
+        if (completed[smNum])     break;
+        for (int bgNum = pairSum - 1; bgNum >= 1; bgNum--) {
+            if (!selected[bgNum]) continue;
+            if (smNum == bgNum)   continue;
+            if (smNum + bgNum == pairSum) {
                 pairCount += 1;
-                completed[i] = i;
-                completed[j] = j;
+                completed[smNum] = smNum;
+                completed[bgNum] = bgNum;
                 break;
             }
         }
